@@ -6,7 +6,7 @@ public class Main {
         MyDoublyLinkedList<Integer> md = new MyDoublyLinkedList<Integer>();
         md.addLast(1);
         md.addLast(2);
-        md.addLast(4);
+        md.addLast(3);
         System.out.println(md);
     }
 
