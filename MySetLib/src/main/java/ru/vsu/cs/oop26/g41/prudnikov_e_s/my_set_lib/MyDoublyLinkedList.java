@@ -33,6 +33,19 @@ public class MyDoublyLinkedList<T> {
         }
         size++;
     }
+    public void addFirst(T value){
+        Node<T> node = new Node<>(value);
+        if(isEmpty()){
+            head = node;
+            tail = node;
+        }else{
+            head.prev = node;
+            node.next = head;
+            head = node;
+        }
+        size++;
+    }
+
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
@@ -49,4 +62,21 @@ public class MyDoublyLinkedList<T> {
         sb.append("]");
         return sb.toString();
     }
+    public String toStringReverse(){
+        StringBuilder sb = new StringBuilder();
+        Node<T> cur = tail;
+        sb.append("[");
+        while (cur != null){
+            if (cur.prev == null){
+                sb.append(cur.value);
+            }else{
+                sb.append(cur.value + ", ");
+            }
+            cur = cur.prev;
+        }
+        sb.append("]");
+        return sb.toString();
+    }
+
+
 }
