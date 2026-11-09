@@ -78,5 +78,24 @@ public class MyDoublyLinkedList<T> {
         return sb.toString();
     }
 
-
+    private Node<T> getNode(int index){
+        IndexOutOfBoundsException ex = new IndexOutOfBoundsException();
+        if (index < 0 || index >= size){throw ex;}
+        if (index < (size/2)){
+            Node<T> cur = head;
+            for (int i = 0; i < index; i++){
+                cur = cur.next;
+            }
+            return cur;
+        }else{
+            Node<T> cur = tail;
+            for (int i = size - 1; i > index; i --){
+                cur = cur.prev;
+            }
+            return cur;
+        }
+    }
+    public T get(int index){
+        return getNode(index).value;
+    }
 }
