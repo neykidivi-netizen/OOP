@@ -21,6 +21,7 @@ public class MyDoublyLinkedList<T> {
     public boolean isEmpty(){
         return size == 0;
     }
+
     public void addLast(T value){
         Node<T> node = new Node<>(value);
         if (isEmpty()) {
@@ -44,6 +45,28 @@ public class MyDoublyLinkedList<T> {
             head = node;
         }
         size++;
+    }
+    public void removeFirst(){
+        if(isEmpty() || size == 1){
+            head = null;
+            tail = null;
+            size = 0;
+        }else{
+            head = head.next;
+            head.prev = null;
+            size--;
+        }
+    }
+    public void removeLast(){
+        if(isEmpty() || size == 1){
+            head = null;
+            tail = null;
+            size = 0;
+        }else{
+            tail = tail.prev;
+            tail.next = null;
+            size--;
+        }
     }
 
     @Override
@@ -98,4 +121,6 @@ public class MyDoublyLinkedList<T> {
     public T get(int index){
         return getNode(index).value;
     }
+
+
 }
