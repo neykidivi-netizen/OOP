@@ -15,7 +15,6 @@ public class MyDoublyLinkedList<T> {
         Node(E value) {
             this.value = value;
         }
-
     }
 
     public int size() {
