@@ -100,7 +100,6 @@ public class MyCircularList<T> {
         }
         sb.append("]");
         return sb.toString();
-
     }
     public String toStringCount(int countsize) {
         StringBuilder sb = new StringBuilder();
@@ -109,15 +108,28 @@ public class MyCircularList<T> {
         for (int i = 0; i < countsize; i++) {
             if (i == countsize - 1) {
                 sb.append(cur.value + " ");
-                cur = cur.next;
             } else {
                 sb.append(cur.value + ", ");
-                cur = cur.next;
             }
+            cur = cur.next;
         }
         sb.append("]");
         return sb.toString();
-
+    }
+    public String rotate(){
+        StringBuilder sb = new StringBuilder();
+        MyCircularList.Node<T> cur = tail;
+        sb.append("[");
+        for (int i = 0; i < size; i++) {
+            if (i == size - 1) {
+                sb.append(cur.value);
+            } else {
+                sb.append(cur.value + ", ");
+            }
+            cur = cur.prev;
+        }
+        sb.append("]");
+        return sb.toString();
     }
     private MyCircularList.Node<T> getNode(int index) {
         IndexOutOfBoundsException ex = new IndexOutOfBoundsException();

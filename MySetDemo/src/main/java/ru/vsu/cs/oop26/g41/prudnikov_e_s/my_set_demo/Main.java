@@ -9,7 +9,7 @@ public class Main {
         mc.addLast(1);
         mc.addLast(2);
         mc.addLast(3);
-        System.out.println(mc.toStringCount(8));
+        System.out.println(mc);
     }
 
 
