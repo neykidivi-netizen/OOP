@@ -8,6 +8,7 @@ public class Main {
         md.addFirst(2);
         md.addFirst(1);
         System.out.println(md);
+        System.out.println(md.toStringReverse());
     }
 
 
